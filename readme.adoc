@@ -1,0 +1,67 @@
+= Test task
+
+== Prerequisites
+
+- JDK 13
+
+== Frameworks
+
+- Ktor
+
+== API
+
+=== Transfers
+
+==== Create transfer
+
+POST `/api/transfers`
+
+Form params:
+
+[source]
+----
+senderId: Long
+receiverId: Long
+amount: BigDecimal (Double)
+----
+
+==== Get all transfers
+
+GET `/api/transfers`
+
+==== Get one transfer
+
+GET `/api/transfers/{id}`
+
+=== Clients
+
+==== Create client
+
+POST `/api/clients`
+
+Form params:
+
+[source]
+----
+firstName: String
+lastName: String
+birthDate: LocalDate
+email: String
+initialBalance: BigDecimal
+----
+
+==== Get all clients
+
+GET `/api/clients`
+
+==== Get one client
+
+GET `/api/clients/{id}`
+
+== Build
+
+`./gradlew clean build`
+
+== Launch
+
+`java -jar ./build/libs/revolut-task-all.jar`
